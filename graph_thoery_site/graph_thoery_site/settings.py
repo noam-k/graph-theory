@@ -12,12 +12,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import json
 import os
-from django.core.exeption import ImproperlyConfigured
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-with open(os.path.join(BASE_DIR, 'secret.json')) as secret_files:
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secret_files:
     secrets = json.load(secret_files)
 
 def get_secret(setting, secrets=secrets):
